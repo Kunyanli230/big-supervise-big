@@ -1,0 +1,15 @@
+{
+  "mode": "single",
+  "generator": "openai/gpt-6-luna",
+  "supervisor": "openai/gpt-6-luna-decisions",
+  "provider": "OpenAI",
+  "api_key_env": "OPENROUTER_API_KEY",
+  "reasoning_effort": "high",
+  "seed": 2026110501,
+  "max_steps": 250,
+  "wall_seconds": 3000,
+  "command_seconds": 120,
+  "max_output_tokens": 16384,
+  "context_limit": 262144,
+  "budget_usd": 1.0
+}
