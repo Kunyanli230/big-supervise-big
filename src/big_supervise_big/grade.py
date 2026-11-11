@@ -38,7 +38,8 @@ def grade(*, checkout: Path, output: Path):
         env.execute({"command": "mkdir -p /tests /logs/verifier"})
         docker("cp", str(task.path / "tests") + "/.", f"{env.container_id}:/tests/")
         record["official_tests_executed"] = True
-        verified = env.execute({"command": "bash /tests/test.sh"}, timeout=task.verifier_timeout)
+        verifier_timeout = float(manifest.get("config", {}).get("verifier_seconds") or 1800)
+        verified = env.execute({"command": "bash /tests/test.sh"}, timeout=verifier_timeout)
         atomic_json(evaluation / "verifier-process.json", verified)
         docker("cp", f"{env.container_id}:/logs/verifier/.", str(evaluation))
         reward = (evaluation / "reward.txt").read_text(encoding="utf-8").strip()

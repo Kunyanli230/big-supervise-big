@@ -37,7 +37,7 @@ def summarize(root: Path):
         oracle = True if True in runs else (False if all(v is False for v in runs) else None)
         matrix.append({"instance_id": task, "A_r1": runs[0], "A_r2": runs[1], "A_r3": runs[2],
                        "A": oracle, "B": cells.get((task, "B")),
-                       "C": cells.get((task, "A_r1"), cells.get((task, "C")))})
+                       "C": cells.get((task, "C")) if (task, "C") in cells else cells.get((task, "A_r1"))})
     groups = {}
     for arm in ("A", "B", "C"):
         values = [row[arm] for row in matrix]

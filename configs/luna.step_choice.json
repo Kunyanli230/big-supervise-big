@@ -6,10 +6,11 @@
   "api_key_env": "OPENROUTER_API_KEY",
   "reasoning_effort": "high",
   "seed": 2026110500,
-  "max_steps": 250,
+  "max_steps": 0,
   "wall_seconds": 3000,
   "command_seconds": 120,
+  "verifier_seconds": 1800,
   "max_output_tokens": 16384,
-  "context_limit": 262144,
+  "context_limit": 1050000,
   "budget_usd": 3.0
 }

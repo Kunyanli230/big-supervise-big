@@ -21,10 +21,11 @@ class Config(BaseModel):
     reasoning_effort: Literal["low", "medium", "high", "xhigh"] = "high"
     seed: int = 2026110500
     max_output_tokens: int = Field(default=16384, ge=1)
-    context_limit: int = Field(default=262144, ge=8192)
-    max_steps: int = Field(default=250, ge=1)
+    context_limit: int = Field(default=1050000, ge=8192)
+    max_steps: int = Field(default=0, ge=0)
     wall_seconds: int = Field(default=3000, ge=1)
     command_seconds: int = Field(default=120, ge=1)
+    verifier_seconds: int = Field(default=1800, ge=1)
     policy_timeout: int = Field(default=180, ge=1)
     decision_timeout: int = Field(default=60, ge=1)
     max_retries: int = Field(default=2, ge=0, le=2)

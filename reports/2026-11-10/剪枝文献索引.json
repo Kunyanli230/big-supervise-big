@@ -1,0 +1,236 @@
+[
+  {
+    "id": "P01",
+    "title": "SWE-VERIFIER: Selective Verification for Cost-Efficient Coding Agents",
+    "arxiv_id": "2610.30284",
+    "url": "https://arxiv.org/abs/2610.30284",
+    "first_submitted": "2026-10-21",
+    "reading_depth": "abstract_and_relevant_methods_or_ablation",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P02",
+    "title": "DARS: Dynamic Action Re-Sampling to Enhance Coding Agent Performance by Adaptive Tree Traversal",
+    "arxiv_id": "2503.14269",
+    "url": "https://arxiv.org/abs/2503.14269",
+    "first_submitted": "2025-03-18",
+    "reading_depth": "abstract_and_relevant_methods_or_ablation",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P03",
+    "title": "JevCoder: When Does Decision Delegation Pay Off in Code Repair?",
+    "arxiv_id": "2610.19596",
+    "url": "https://arxiv.org/abs/2610.19596",
+    "first_submitted": "2026-10-14",
+    "reading_depth": "abstract_and_relevant_methods_or_ablation",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P04",
+    "title": "When Agents go Astray: Course-Correcting SWE Agents with PRMs",
+    "arxiv_id": "2509.02360",
+    "url": "https://arxiv.org/abs/2509.02360",
+    "first_submitted": "2025-09-02",
+    "reading_depth": "abstract_and_relevant_methods_or_ablation",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P05",
+    "title": "EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents",
+    "arxiv_id": "2601.05777",
+    "url": "https://arxiv.org/abs/2601.05777",
+    "first_submitted": "2026-01-09",
+    "reading_depth": "abstract_and_relevant_methods_or_ablation",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P06",
+    "title": "StopLoss: Teaching Agents to Predict Failure and Stop Early",
+    "arxiv_id": "2610.25525",
+    "url": "https://arxiv.org/abs/2610.25525",
+    "first_submitted": "2026-10-18",
+    "reading_depth": "abstract_and_relevant_methods_or_ablation",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P07",
+    "title": "Guardrails Beat Guidance: A Large-Scale Study of Rules, Skills, and Persistent Configuration for Coding Agents",
+    "arxiv_id": "2604.11088",
+    "url": "https://arxiv.org/abs/2604.11088",
+    "first_submitted": "2026-04-13",
+    "reading_depth": "abstract_and_relevant_methods_or_ablation",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P08",
+    "title": "Reusing Past Repairs Through Hierarchical Trajectory Abstraction for Coding Agents",
+    "arxiv_id": "2607.29658",
+    "url": "https://arxiv.org/abs/2607.29658",
+    "first_submitted": "2026-07-31",
+    "reading_depth": "abstract_and_relevant_methods_or_ablation",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P09",
+    "title": "Reducing Cost of LLM Agents with Trajectory Reduction",
+    "arxiv_id": "2509.23586",
+    "url": "https://arxiv.org/abs/2509.23586",
+    "first_submitted": "2025-09-28",
+    "reading_depth": "abstract_and_relevant_methods_or_ablation",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P10",
+    "title": "SWE-Pruner: Self-Adaptive Context Pruning for Coding Agents",
+    "arxiv_id": "2601.16746",
+    "url": "https://arxiv.org/abs/2601.16746",
+    "first_submitted": "2026-01-23",
+    "reading_depth": "abstract_and_relevant_methods_or_ablation",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P11",
+    "title": "Fail-Fast, Restart-Smart: Early Failure Prediction and Restart for SWE Agentic Tasks",
+    "arxiv_id": "2608.03222",
+    "url": "https://arxiv.org/abs/2608.03222",
+    "first_submitted": "2026-08-04",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P12",
+    "title": "SWE-Search: Enhancing Software Agents with Monte Carlo Tree Search and Iterative Refinement",
+    "arxiv_id": "2410.20285",
+    "url": "https://arxiv.org/abs/2410.20285",
+    "first_submitted": "2024-10-26",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P13",
+    "title": "SE-Agent: Self-Evolution Trajectory Optimization in Multi-Step Reasoning with LLM-Based Agents",
+    "arxiv_id": "2508.02085",
+    "url": "https://arxiv.org/abs/2508.02085",
+    "first_submitted": "2025-08-04",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P14",
+    "title": "SWE-Pruner Pro: The Coder LLM Already Knows What to Prune",
+    "arxiv_id": "2607.18213",
+    "url": "https://arxiv.org/abs/2607.18213",
+    "first_submitted": "2026-07-20",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P15",
+    "title": "AttnCompress: Dynamic Attention-Guided Trajectory Compression for Software Engineering Agents",
+    "arxiv_id": "2609.08318",
+    "url": "https://arxiv.org/abs/2609.08318",
+    "first_submitted": "2026-09-08",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P16",
+    "title": "Skip the Compressor: Coding Agents Fix More Issues When They Pick Whole Files",
+    "arxiv_id": "2610.21073",
+    "url": "https://arxiv.org/abs/2610.21073",
+    "first_submitted": "2026-10-15",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P17",
+    "title": "RepairAgent: An Autonomous, LLM-Based Agent for Program Repair",
+    "arxiv_id": "2403.17134",
+    "url": "https://arxiv.org/abs/2403.17134",
+    "first_submitted": "2024-03-25",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P18",
+    "title": "Agentless: Demystifying LLM-based Software Engineering Agents",
+    "arxiv_id": "2407.01489",
+    "url": "https://arxiv.org/abs/2407.01489",
+    "first_submitted": "2024-07-01",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P19",
+    "title": "CodeMonkeys: Scaling Test-Time Compute for Software Engineering",
+    "arxiv_id": "2501.14723",
+    "url": "https://arxiv.org/abs/2501.14723",
+    "first_submitted": "2025-01-24",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P20",
+    "title": "SWE-Shepherd: Advancing PRMs for Reinforcing Code Agents",
+    "arxiv_id": "2604.10493",
+    "url": "https://arxiv.org/abs/2604.10493",
+    "first_submitted": "2026-04-12",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P21",
+    "title": "SWE-Router: Routing in Multi-turn Agentic Software Engineering Tasks",
+    "arxiv_id": "2607.00053",
+    "url": "https://arxiv.org/abs/2607.00053",
+    "first_submitted": "2026-06-30",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P22",
+    "title": "ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning",
+    "arxiv_id": "2603.12740",
+    "url": "https://arxiv.org/abs/2603.12740",
+    "first_submitted": "2026-03-13",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P23",
+    "title": "PrefixGuard: Online Failure Warning and Trace-Grounded Diagnosis for LLM Agents",
+    "arxiv_id": "2605.06455",
+    "url": "https://arxiv.org/abs/2605.06455",
+    "first_submitted": "2026-05-07",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P24",
+    "title": "LEVER: Learning to Verify Language-to-Code Generation with Execution",
+    "arxiv_id": "2302.08468",
+    "url": "https://arxiv.org/abs/2302.08468",
+    "first_submitted": "2023-02-16",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P25",
+    "title": "Cortex: Measurement-Gated Evolution and Pruning of Coding-Agent Skills and Rules",
+    "arxiv_id": "2610.14216",
+    "url": "https://arxiv.org/abs/2610.14216",
+    "first_submitted": "2026-10-09",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "id": "P26",
+    "title": "BAGEN: Are LLM Agents Budget-Aware?",
+    "arxiv_id": "2606.00198",
+    "url": "https://arxiv.org/abs/2606.00198",
+    "first_submitted": "2026-05-29",
+    "reading_depth": "abstract_screening",
+    "checked_on": "2026-11-10"
+  }
+]

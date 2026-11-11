@@ -2,9 +2,9 @@
   "dataset": "ScaleAI/SWE-bench_Pro",
   "revision": "2d52cb3df914a3fcf80c7f66738b3a88ae37fc50",
   "harness_sha": "66f92766bba642462d4bbe5479e83f91f9211862",
-  "sampling_method": "stratified_11_repos_8x3_3x2",
+  "sampling_method": "stratified_11_repos_8x3_3x2_28_formal_2_dev",
   "hash_seed_prefix": "20261105:luna-bsb-pro-v2:",
-  "repo_quotas": {
+  "repo_quotas_total_30": {
     "ansible/ansible": 3,
     "internetarchive/openlibrary": 3,
     "flipt-io/flipt": 3,
@@ -17,6 +17,9 @@
     "NodeBB/NodeBB": 2,
     "tutao/tutanota": 2
   },
+  "formal_count": 28,
+  "dev_count": 2,
+  "total_count": 30,
   "tasks": [
     "instance_tutao__tutanota-f3ffe17af6e8ab007e8d461355057ad237846d9d-vbc0d9ba8f0071fbe982809910959a6ff8884dbbf",
     "instance_internetarchive__openlibrary-3aeec6afed9198d734b7ee1293f03ca94ff970e1-v13642507b4fc1f8d234172bf8129942da2c2ca26",
@@ -45,12 +48,10 @@
     "instance_protonmail__webclients-7b833df125859e5eb98a826e5b83efe0f93a347b",
     "instance_protonmail__webclients-32ff10999a06455cb2147f6873d627456924ae13",
     "instance_NodeBB__NodeBB-9c576a0758690f45a6ca03b5884c601e473bf2c1-vd59a5728dfc977f44533186ace531248c2917516",
-    "instance_ansible__ansible-984216f52e76b904e5b0fa0fb956ab4f1e0a7751-v1055803c3a812189a1133297f7f5468579283f86",
-    "instance_ansible__ansible-b748edea457a4576847a10275678127895d2f02f-v1055803c3a812189a1133297f7f5468579283f86",
     "instance_NodeBB__NodeBB-767973717be700f46f06f3e7f4fc550c63509046-vnan"
   ],
   "dev_tasks": [
-    "instance_gravitational__teleport-e6d86299a855687b21970504fbf06f52a8f80c74-vce94f93ad1030e3136852817f2423c1b3ac37bc4",
-    "instance_internetarchive__openlibrary-f0341c0ba81c790241b782f5103ce5c9a6edf8e3-ve8fc82d8aae8463b752a211156c5b7b59f349237"
+    "instance_ansible__ansible-984216f52e76b904e5b0fa0fb956ab4f1e0a7751-v1055803c3a812189a1133297f7f5468579283f86",
+    "instance_ansible__ansible-b748edea457a4576847a10275678127895d2f02f-v1055803c3a812189a1133297f7f5468579283f86"
   ]
 }

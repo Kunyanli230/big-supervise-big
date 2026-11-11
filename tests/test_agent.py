@@ -9,8 +9,8 @@ from big_supervise_big.router import RunStop
 
 def test_only_selected_action_executes_and_only_selected_history_is_inherited(router_factory, tmp_path):
     first = [policy("unselected-first"), policy("chosen", call_id="chosen-id"), policy("unselected-third")]
-    second = [policy("submit", call_id="submit-1"), policy("submit", call_id="submit-2"),
-              policy("submit", call_id="submit-3")]
+    second = [policy("unselected-submit-first", call_id="submit-1"), policy("submit", call_id="submit-2"),
+              policy("unselected-submit-third", call_id="submit-3")]
     router = router_factory([*first, decision(), *second, decision()])
     env = FakeEnvironment()
     agent = SupervisedAgent(router, env, output_path=tmp_path / "trajectory.json")
@@ -48,7 +48,7 @@ def test_invalid_selected_branch_falls_back_to_highest_probability_valid(router_
 
 def test_all_invalid_uses_native_format_error_feedback_without_paid_replacements(router_factory):
     responses = [policy(tool_calls=[]) for _ in range(3)]
-    responses += [policy("submit") for _ in range(3)] + [decision()]
+    responses += [policy("wrong"), policy("submit"), policy("other"), decision()]
     router = router_factory(responses)
     env = FakeEnvironment()
     agent = SupervisedAgent(router, env)
@@ -57,6 +57,23 @@ def test_all_invalid_uses_native_format_error_feedback_without_paid_replacements
     next_history = router.requests[3][1]["messages"]
     assert next_history[-1]["role"] == "user" and "Invalid format" in next_history[-1]["content"]
     assert not any(m["role"] == "assistant" for m in next_history)
+
+
+def test_identical_valid_actions_skip_selector_and_keep_matching_branch_history(router_factory):
+    responses = [policy("submit", call_id=f"branch-{i}", content=f"thought-{i}") for i in range(3)]
+    router = router_factory(responses)
+    env = FakeEnvironment()
+    agent = SupervisedAgent(router, env)
+    result = agent.run("task")
+    assert result["exit_status"] == "Submitted" and env.commands == ["submit"]
+    assert router.calls == 3 and not any("questions" in payload for _, payload in router.requests)
+    selection = agent.decisions[0]
+    assert selection["answer"] is None
+    assert selection["fallback_reason"] == "unanimous_valid_action_random_choice"
+    selected = selection["selected_branch_id"]
+    assistant = next(m for m in policy_messages(agent.messages) if m["role"] == "assistant")
+    assert assistant["content"] == f"thought-{selected}"
+    assert assistant["tool_calls"][0]["id"] == f"branch-{selected}"
 
 
 @pytest.mark.parametrize("bad", [None, {"option_1": 1.0},
@@ -76,7 +93,7 @@ def test_bad_selector_never_executes_or_silently_uses_first_branch(router_factor
 def test_selector_error_terminates_before_action(router_factory):
     response = decision()
     response["answers"]["next_action"]["choice"] = "unknown"
-    router = router_factory([policy(), policy(), policy(), response])
+    router = router_factory([policy("one"), policy("two"), policy("three"), response])
     env = FakeEnvironment()
     result = SupervisedAgent(router, env).run("task")
     assert result["exit_status"] == "selector_error" and not env.commands

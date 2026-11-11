@@ -2,6 +2,7 @@
 
 import copy
 import math
+import random
 from types import SimpleNamespace
 
 from minisweagent.agents.default import DefaultAgent
@@ -162,7 +163,7 @@ class SupervisedAgent(DefaultAgent):
     def query(self):
         try:
             self.router.remaining()
-            if self.n_calls >= self.config.step_limit:
+            if self.config.step_limit > 0 and self.n_calls >= self.config.step_limit:
                 raise RunStop("step_limit")
             self.n_calls += 1
             count = 3 if self.router.cfg.mode == "step_choice" else 1
@@ -185,15 +186,19 @@ class SupervisedAgent(DefaultAgent):
                                    "extra": {"cost": 0.0, "interrupt_type": "FormatError"}})
             answer, fallback, chosen = None, None, 0
             if count == 3:
-                criteria = {f"option_{i + 1}": {key: candidate[key] for key in
-                            ("thought", "action", "valid_action")} for i, candidate in enumerate(candidates)}
-                state = {"task": self.extra_template_vars["task"], "step": self.n_calls,
-                         "shared_prefix": shared_prefix(frozen)}
-                answer = self.selector.choose(state, criteria)
-                chosen = int(answer["choice"].removeprefix("option_")) - 1
-                if chosen not in valid:
-                    chosen = max(valid, key=lambda i: answer["probabilities"][f"option_{i + 1}"])
-                    fallback = "selector_chose_invalid_branch_fallback_to_highest_prob_valid"
+                if len(valid) == 3 and len({candidates[i]["action"].strip() for i in valid}) == 1:
+                    chosen = random.Random(self.router.cfg.seed + self.n_calls).choice(valid)
+                    fallback = "unanimous_valid_action_random_choice"
+                else:
+                    criteria = {f"option_{i + 1}": {key: candidate[key] for key in
+                                ("thought", "action", "valid_action")} for i, candidate in enumerate(candidates)}
+                    state = {"task": self.extra_template_vars["task"], "step": self.n_calls,
+                             "shared_prefix": shared_prefix(frozen)}
+                    answer = self.selector.choose(state, criteria)
+                    chosen = int(answer["choice"].removeprefix("option_")) - 1
+                    if chosen not in valid:
+                        chosen = max(valid, key=lambda i: answer["probabilities"][f"option_{i + 1}"])
+                        fallback = "selector_chose_invalid_branch_fallback_to_highest_prob_valid"
             self.router.remaining()
             decision = {"step": self.n_calls, "selected_branch_id": chosen,
                         "answer": answer, "fallback_reason": fallback}

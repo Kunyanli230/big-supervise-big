@@ -1,0 +1,17 @@
+{
+  "A_input": 29638300,
+  "A_cost": 1.1942184499999993,
+  "B_input": 36763819,
+  "B_known_cost": 1.7573815199999991,
+  "input_increase_percent": 24.041591454300693,
+  "known_cost_increase_percent": 47.15745850350916,
+  "B_policy_cache_percent": 95.94241311348289,
+  "B_selector_cost_share_percent": 50.692003407433134,
+  "same_action_step_percent": 9.68586387434555,
+  "duplicate_call_percent": 10.490693739424703,
+  "duplicate_input_share_total_percent": 11.176491212732824,
+  "duplicate_known_cost_share_percent": 3.258784410114887,
+  "policy_cost_per_response": 0.0007331045854483919,
+  "selector_cost_per_known_response": 0.0023381939632545925,
+  "exact_same_visible_thought_triplets": 9
+}

@@ -144,7 +144,8 @@ class Router:
                 else:
                     if not known:
                         raise RunStop("unknown_cost")
-                    if body.get("model") != model:
+                    allowed_models = {model, self.catalog[model].get("canonical_slug")} - {None}
+                    if body.get("model") not in allowed_models:
                         raise RunStop("model_mismatch")
                     if not body.get("provider"):
                         raise RunStop("provider_missing")
